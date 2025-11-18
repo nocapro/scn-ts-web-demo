@@ -33,4 +33,10 @@ export default defineConfig({
       'Cross-Origin-Opener-Policy': 'same-origin',
     },
   },
+  build: {
+    // Enable source map for debugging
+    sourcemap: true,
+    // Handle chunk size warnings gracefully
+    chunkSizeWarningLimit: 1000,
+  }
 })
