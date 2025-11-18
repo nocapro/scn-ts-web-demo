@@ -1,0 +1,37 @@
+# Cloudflare Pages configuration
+# This file configures the build and deployment process
+
+[build]
+  # The command to build the project
+  command = "npm run build"
+  # The directory to publish after building
+  publish = "dist"
+
+[build.env]
+  # Node.js version to use
+  NODE_VERSION = "18"
+
+# Handle SPA routing - all routes should serve index.html
+[[routes]]
+  pattern = "/*"
+  upstream = "your-project-name.pages.dev"
+
+# Redirect all traffic to HTTPS
+[[redirects]]
+  from = "http://your-project.pages.dev/*"
+  to = "https://your-project.pages.dev/:splat"
+  status = 301
+
+# Set headers for better security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+  auto_preview = true
