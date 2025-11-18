@@ -1,20 +1,3 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[build.env]
-  NODE_VERSION = "18"
-
-[[routes]]
-  pattern = "/*"
-  upstream = "your-project-name.pages.dev"
-
-[[redirects]]
-  from = "/*"
-  to = "https://your-project-name.pages.dev/:splat"
-  status = 301
-
-[dev]
-  command = "npm run dev"
-  port = 3000
-  auto_preview = true
+# This file is not needed for Cloudflare Pages deployment
+# Cloudflare Pages uses cloudflare.toml for build configuration
+# Remove this file to avoid confusion

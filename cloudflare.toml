@@ -11,17 +11,6 @@
   # Node.js version to use
   NODE_VERSION = "18"
 
-# Handle SPA routing - all routes should serve index.html
-[[routes]]
-  pattern = "/*"
-  upstream = "your-project-name.pages.dev"
-
-# Redirect all traffic to HTTPS
-[[redirects]]
-  from = "http://your-project.pages.dev/*"
-  to = "https://your-project.pages.dev/:splat"
-  status = 301
-
 # Set headers for better security and performance
 [[headers]]
   for = "/*"

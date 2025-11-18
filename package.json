@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:app && npm run build:lib",
-    "build:app": "vite build",
-    "build:lib": "tsup",
+    "build": "vite build",
     "check": "tsc --noEmit",
     "preview": "vite preview",
     "prepare": "node scripts/prepare-wasm.cjs",
@@ -37,7 +35,6 @@
     "eslint": "^8.57.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "tsup": "^8.5.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.12",
     "vite-plugin-top-level-await": "^1.4.1",
